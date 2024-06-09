@@ -1,0 +1,543 @@
+    @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap"); @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap'); :root {
+    --blue: #5e50f9;
+    --indigo: #6610f2;
+    --purple: #6a008a;
+    --pink: #e91e63;
+    --red: #f96868;
+    --orange: #f2a654;
+    --yellow: #f6e84e;
+    --green: #46c35f;
+    --teal: #58d8a3;
+    --cyan: #57c7d4;
+    --white: #ffffff;
+    --gray: #434a54;
+    --gray-light: #aab2bd;
+    --gray-lighter: #e8eff4;
+    --gray-lightest: #e6e9ed;
+    --black: #000000;
+    --primary: #0090e7;
+    --secondary: #e4eaec;
+    --success: #00d25b;
+    --info: #8f5fe8;
+    --warning: #ffab00;
+    --danger: #fc424a;
+    --light: #ffffff;
+    --dark: #101010;
+}
+
+* {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    box-sizing: border-box;
+    position: relative;
+    color: #6c7293;
+}
+
+html {
+    width: 100vw;
+    height: 100vh;
+}
+
+body {
+    background: #11141a;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    
+}
+
+.ucup {
+    width: 100%;
+    height: 1.3px;
+    margin: 10px 0;
+    background: #282c38;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+::selection {
+    color: #fff;
+    background: #4285f4;
+}
+
+.wrapper {
+    z-index: 999;
+    position: absolute;
+    margin: 25px 0 0 0;
+    width: calc(100% - 40px);
+    max-width: 550px;
+    padding: 20px;
+    border-radius: 5px;
+    background: #191c24;
+    box-shadow: 0 0 20px rgba(0,0,0,0.7);
+}
+
+.bgtit {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.bgtit .tit {
+    font-family: 'Roboto', sans-serif;
+    font-size: 35px;
+    font-weight: 900;
+    color: #fff;
+}
+
+.bgtit .wb {
+    font-family: 'Roboto', sans-serif;
+    font-size: 35px;
+    font-weight: 900;
+    color: #fff;
+    animation: 2s flash1 infinite;
+}
+
+.bgtit .tit .pp {
+    margin-left: 6px;
+    color: var(--primary);
+    animation: 3s flash2 infinite;
+}
+
+.bgtit .desc {
+    margin: 5px 0;
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+@keyframes flash1 {
+    0% {
+        opacity: 1;
+    }
+
+    49% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    52% {
+        opacity: 1;
+    }
+
+    53% {
+        opacity: 0.3;
+    }
+
+    54% {
+        opacity: 1;
+    }
+
+    55% {
+        opacity: 0.3;
+    }
+
+    56% {
+        opacity: 1;
+    }
+
+    57% {
+        opacity: 0.3;
+    }
+
+    58% {
+        opacity: 1;
+    }
+}
+
+@keyframes flash2 {
+    0% {
+        opacity: 1;
+    }
+
+    79% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0.3;
+    }
+
+    82% {
+        opacity: 1;
+    }
+
+    83% {
+        opacity: 0.3;
+    }
+
+    84% {
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 0.3;
+    }
+
+    86% {
+        opacity: 1;
+    }
+
+    87% {
+        opacity: 0.3;
+    }
+
+    88% {
+        opacity: 1;
+    }
+
+    89% {
+        opacity: 0.3;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    91% {
+        opacity: 0.3;
+    }
+
+    92% {
+        opacity: 1;
+    }
+}
+
+.bgtit .tit .version {
+    font-family: 'Ubuntu', Sans-Serif;
+    font-size: 12px;
+    opacity: 0.6;
+    margin-left: 5px;
+    color: var(--primary);
+}
+
+.select-btn, li {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.select-btn {
+    height: 50px;
+    padding: 0 15px;
+    font-size: 18px;
+    background: #2a3038;
+    border-radius: 5px;
+    justify-content: space-between;
+    border: 1px solid #434a54;
+}
+
+.select-btn:hover {
+    border: 1px solid var(--primary);
+    transition: 0.2s;
+}
+
+.select-btn i {
+    font-size: 18px;
+    transition: transform .2s linear;
+}
+
+.wrapper.active .select-btn i {
+    transform: rotate(-180deg);
+    color: var(--primary);
+}
+
+.content {
+    display: none;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #2a30387b;
+}
+
+
+.content .search {
+    position: relative;
+}
+
+.search i {
+    top: 50%;
+    left: 15px;
+    color: #999;
+    z-index: 9;
+    font-size: 15px;
+    pointer-events: none;
+    transform: translateY(-50%);
+    position: absolute;
+}
+
+.search input {
+    height: 40px;
+    width: 100%;
+    outline: none;
+    font-size: 15px;
+    border-radius: 5px;
+    padding: 0 20px 0 43px;
+    border: 1px solid #434a54;
+    background: #2a3038;
+    color: var(--success);
+}
+
+input::placeholder {
+    color: #6c72938a;
+}
+
+input:focus {
+    border: 1px solid var(--primary);
+    transition: 0.2s;
+}
+
+.content .options {
+    max-height: 240px;
+    overflow-y: auto;
+}
+
+.options::-webkit-scrollbar {
+    width: 5px;
+}
+
+.options::-webkit-scrollbar-track {
+    background: #2a3038;
+    border-radius: 25px;
+}
+
+.options::-webkit-scrollbar-thumb {
+    background: #0090e77b;
+    border-radius: 25px;
+}
+
+.options::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
+.box-list {
+    margin-top: 10px;
+    background: rgba(42, 48, 56, 0.200);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.options li {
+    height: 40px;
+    padding: 0 15px;
+    font-size: 15px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.options li:nth-child(even) {
+    background-color: #2a30386b;
+}
+
+.options li:hover {
+    background: #0090e71b;
+    transition: 0.2s;
+}
+
+.options li:hover > * {
+    color: #fff;
+}
+
+.options li:hover, li.selected {
+    background: var(--primary) !important;
+    color: #ffffff !important;
+}
+
+.not-found {
+    padding: 10px;
+    color: var(--danger);
+}
+
+.wrp-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+button {
+    width: calc(50% - 5px);
+    height: 35px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    background: var(--success);
+    color: #fff;
+    font-size: 14px;
+}
+
+button.create, .delete {
+    background: var(--danger);
+}
+
+button.setting {
+    background: var(--warning);
+}
+
+button.prev {
+    width: 100%;
+}
+
+button:hover, button:disabled {
+    opacity: .5;
+}
+
+.success {
+    height: auto;
+    padding: 6px 15px;
+    font-size: 13px;
+    background: #00d25b1b;
+    border-radius: 5px;
+    color: var(--success);
+    justify-content: flex-start;
+    border: .3px solid var(--success);
+    display: flex;
+    align-items: center;
+}
+
+.success i {
+    font-size: 15px;
+    color: var(--success);
+    margin-right: 6px;
+}
+
+.list-url .wrp-inp {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.list-url label {
+    z-index: 9;
+    display: block;
+    font-size: 13px;
+    text-align: left;
+    width: auto;
+    white-space: nowrap;
+    width: 75px;
+    padding-left: 5px;
+    border-left: 1px dashed var(--primary);
+}
+
+.list-url label.a {
+    border-left: 1px dashed var(--success);
+}
+
+.list-url input {
+    height: 25px;
+    width: 100%;
+    outline: none;
+    font-size: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #434a54;
+    background: #2a3038;
+    color: var(--success);
+}
+
+.wrp-inp #as {
+    color: var(--primary);
+}
+
+.wrp-inp input:hover {
+    transition: 0.2s;
+}
+
+.wrp-inp #as:hover {
+    border: 1px solid var(--primary);
+}
+
+.wrp-inp #sh:hover {
+    border: 1px solid var(--success);
+}
+
+section {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    background: #111111;
+}
+
+section:before {
+    content: '';
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-image: radial-gradient(circle, #0090e78b, #111111 80%);
+    animation: animate-line-background 6s linear infinite;
+    -webkit-animation: animate-line-background 6s linear infinite;
+    -moz-animation: animate-line-background 6s linear infinite;
+    -ms-animation: animate-line-background 6s linear infinite;
+    -o-animation: animate-line-background 6s linear infinite;
+}
+
+@keyframes animate-line-background {
+    0%,30% {transform: translateY(-100%);}
+    100% {transform: translateY(100%);}
+}
+
+@-webkit-keyframes animate-line-background {
+    0%,30% {transform: translateY(-100%);}
+    100% {transform: translateY(100%);}
+}
+
+@-moz-keyframes animate-line-background {
+    0%,30% {transform: translateY(-100%);}
+    100% {transform: translateY(100%);}
+}
+
+@-ms-keyframes animate-line-background {
+    0%,30% {transform: translateY(-100%);}
+    100% {transform: translateY(100%);}
+}
+
+@-o-keyframes animate-line-background {
+    0%,30% {transform: translateY(-100%);}
+    100% {transform: translateY(100%);}
+}
+
+section span.square {
+    margin: 1px;
+    position: relative;
+    display: block;
+    width: calc(6.25vw - 2px);
+    height: calc(6.25vw - 2px);
+    background: #11141a;
+    transition: 1.5s;
+}
+
+section span.square:hover,
+section span.square:active {
+    transition: .2s;
+    background: #0090e78b;
+}
+
+@media screen and (max-width: 900px) {
+    section span.square {
+        width: calc(10vw - 2px);
+        height: calc(10vw - 2px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    section span.square {
+        width: calc(10vw - 2px);
+        height: calc(10vw - 2px);
+    }
+}
